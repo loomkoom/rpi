@@ -1,6 +1,5 @@
 import RPi.GPIO as GPIO
 import time
-GPIO.cleanup()
 GPIO.setmode(GPIO.BCM)
 
 def blink(pin):
@@ -10,9 +9,10 @@ def blink(pin):
     GPIO.output(pin,0)
     time.sleep(0.5)
     
-    
-for i in range(0,10):
-    blink(18)
-    
-GPIO.cleanup()
-print("Program Executed")
+try:
+    while True:
+        blink(24)
+except KeyboardInterrupt:
+    GPIO.cleanup()
+    print("\nProgram Exited")
+    exit(0)
