@@ -1,3 +1,4 @@
+#!/usr/bin/env python3 
 # PWM on two LED's
 
 import RPi.GPIO as GPIO 
